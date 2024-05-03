@@ -54,12 +54,12 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
                 {item.menuItems && (
                   <span
                     onClick={() => toggleSubMenu(index)}
-                    className="ml-1 cursor-pointer"
+                    className="ml-1 cursor-pointer text-black"
                   >
                     {activeIndex === index ? (
-                      <FaChevronUp />
+                      <FaChevronUp className="text-black" />
                     ) : (
-                      <FaChevronDown />
+                      <FaChevronDown className="text-black" />
                     )}
                   </span>
                 )}
@@ -81,12 +81,13 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
             </li>
           ))}
         </ul>
-        <div
-          className="md:hidden lg:hidden 
-        border-2 border-red-600 mx-auto"
-        >
+        <div className="md:hidden lg:hidden text-black mx-auto">
           <button onClick={toggleMenu}>
-            {open ? <FaTimes /> : <FaBars />}
+            {open ? (
+              <FaTimes className="text-black" />
+            ) : (
+              <FaBars className="text-black" />
+            )}
           </button>
         </div>
       </div>
@@ -109,12 +110,12 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
                   {item.menuItems && (
                     <span
                       onClick={() => toggleSubMenu(index)}
-                      className="cursor-pointer ml-1"
+                      className="cursor-pointer ml-1 text-black"
                     >
                       {activeIndex === index ? (
-                        <FaChevronUp />
+                        <FaChevronUp className="text-black" />
                       ) : (
-                        <FaChevronDown />
+                        <FaChevronDown className="text-black" />
                       )}
                     </span>
                   )}
