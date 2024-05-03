@@ -81,7 +81,10 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
             </li>
           ))}
         </ul>
-        <div className="md:hidden lg:hidden">
+        <div
+          className="md:hidden lg:hidden 
+        border-2 border-red-600 mx-auto"
+        >
           <button onClick={toggleMenu}>
             {open ? <FaTimes /> : <FaBars />}
           </button>
