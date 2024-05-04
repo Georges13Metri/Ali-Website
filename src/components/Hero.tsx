@@ -44,8 +44,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 mb-20 flex justify-center items-center">
-        <div className="flex flex-col mx-auto">
+      <div className=" flex justify-center bg-white items-center">
+        <div className="flex mt-20 flex-col mx-auto">
           <h2 className="text-3xl font-bold mb-10 text-center">
             WHY <span className="text-orange-700">ALI PERSONAL TRAINING</span>{" "}
             WILL WORK FOR YOU
@@ -232,7 +232,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 
+            className="grid bg-white grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 
            p-4 md:p-8  items-center"
           >
             <div className="mx-auto">
@@ -243,7 +243,7 @@ const Hero = () => {
                 alt="freeclient"
               />
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center mt-20">
               <h1 className="text-lg md:text-3xl font-bold mb-4 font-serif">
                 A FREE TRANSFORMATION CONSULTATION (£50.00 VALUE)
               </h1>
@@ -260,7 +260,7 @@ const Hero = () => {
               </p>
               <Link href="/">
                 <button
-                  className=" hover:bg-gray-200 text-orange-700  py-2 px-4 md:px-8 transition duration-300
+                  className="mb-20 hover:bg-gray-200 text-orange-700  py-2 px-4 md:px-8 transition duration-300
                  ease-in-out hover:border hover:text-orange-700 hover:border-orange-700 border border-orange-700 text-sm md:text-base"
                 >
                   CLAIM OFFER
@@ -270,7 +270,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 relative h-screen">
+      <div className="relative h-screen">
         <div
           className="absolute inset-0 h-full bg-cover bg-center bg-no-repeat"
           style={{
@@ -278,18 +278,203 @@ const Hero = () => {
             backgroundSize: "cover",
           }}
         >
-          <div className="absolute inset-0 w-full md:w-1/2 mx-auto flex flex-col  items-center text-center md:text-right px-8 mt-20">
-            <h1 className="text-lg md:text-2xl lg:text-2xl font-serif text-white mb-6 md:mb-10">
-              SERVICES
-            </h1>
-            <p className="text-white text-xs md:text-sm mb-6 md:mb-10">
-              <span>
-                I offer a comprehensive service which goes above and beyond to
-                get you in the ​best shape of your life and feeling great,
-                whether you &apos; re a complete beginner, or have hit a
-                plateau.​
-              </span>
-            </p>
+          <div
+            className="absolute inset-0  flex flex-col items-center 
+          mt-10"
+          >
+            <div
+              className="md:w-3/4 mx-auto 
+      flex flex-col items-center "
+            >
+              <h1
+                className="text-lg md:text-2xl lg:text-2xl font-serif 
+              text-white mb-6 md:mb-5"
+              >
+                SERVICES
+              </h1>
+              <p
+                className="text-white text-xs md:text-sm mb-6 
+              md:mb-10 text-center"
+              >
+                <span>
+                  I offer a comprehensive service which goes above and beyond to
+                  get you in the ​best shape of your life and feeling great,
+                  <br />
+                  whether you're a complete beginner, or have hit a plateau.​
+                </span>
+              </p>
+
+              <div
+                className="grid grid-cols-1 md:grid-cols-1 
+              lg:grid-cols-3 gap-4 "
+              >
+                {/* Service 1 */}
+                <div
+                  className="text-white flex flex-col 
+                items-center text-center"
+                >
+                  {/* <Image
+                    width={200}
+                    height={200}
+                    alt="one to one"
+                    src="/one-to-one_orig.png"
+                  /> */}
+                  <h2 className="text-lg mt-2 font-bold mb-2">
+                    ONE TO ONE COACHING
+                  </h2>
+                  <p className="text-sm ">
+                    A one to one health and lifestyle overhaul for people who
+                    need the extra accountability and guidance to reach their
+                    goals.
+                  </p>
+                  <Link href="/">
+                    <button
+                      className="bg-orange-700 border  border-orange-700 
+                    text-white py-2 px-2 mt-2 
+                   hover:bg-transparent hover:border hover:border-orange-700
+                   hover:text-orange-700"
+                    >
+                      LEARN MORE
+                    </button>
+                  </Link>
+                </div>
+                {/* Service 2 */}
+                <div
+                  className="text-white flex flex-col 
+                items-center text-center"
+                >
+                  <h2 className="text-lg font-bold mb-2">NUTRITION COACHING</h2>
+                  <p className="text-sm ">
+                    Get a handle on your nutrition once and for all with
+                    extensive nutrition and habit coaching to ensure you stay on
+                    track.
+                  </p>
+                  <Link href="/">
+                    <button
+                      className="bg-orange-700 border  border-orange-700 
+                    text-white py-2 px-2 mt-2 
+                   hover:bg-transparent hover:border hover:border-orange-700
+                   hover:text-orange-700"
+                    >
+                      LEARN MORE
+                    </button>
+                  </Link>
+                </div>
+                {/* Service 3 */}
+                <div
+                  className="text-white flex flex-col 
+                items-center text-center"
+                >
+                  <h2 className="text-lg font-bold mb-2">MINDSET COURSE</h2>
+                  <p className="text-sm ">
+                    ​Transform your mindset in as little as 5 weeks - Set
+                    meaningful goals, change your habits, gain willpower and
+                    boost motivation.
+                  </p>
+                  <Link href="/">
+                    <button
+                      className="bg-orange-700 border  border-orange-700 
+                    text-white py-2 px-2 mt-2 
+                   hover:bg-transparent hover:border hover:border-orange-700
+                   hover:text-orange-700"
+                    >
+                      LEARN MORE
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-gray-300 pt-10 pb-5">
+        <div className="container mx-auto">
+          <div
+            className="mt-10 mb-10 flex 
+          justify-center"
+          >
+            <h3 className="text-4xl border-b-2 font-bold border-black font-serif">
+              CONNECT WITH ME
+            </h3>
+          </div>
+
+          <div
+            className="flex flex-col md:flex-row
+           justify-center items-center mb-10"
+          >
+            <div className="mx-4 mb-4 md:mb-0">
+              <a
+                href="https://www.facebook.com/your-facebook-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/facebook.png"
+                  alt="Facebook"
+                  width={100}
+                  height={100}
+                  className="cursor-pointer"
+                />
+              </a>
+            </div>
+            <div className="mx-4">
+              <a
+                href="https://www.instagram.com/your-instagram-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/instagram.png"
+                  alt="Instagram"
+                  width={100}
+                  height={100}
+                  className="cursor-pointer"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex flex-col md:flex-row 
+      items-center justify-center md:justify-between
+       px-4 py-8 md:py-12 bg-whit mb-10"
+      >
+        <div className="md:w-1/2 mb-4 md:mb-0 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-4">
+            PERSONAL TRAINING IN LANCING
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed text-center md:text-left">
+            At Ali Personal Training in Lancing I'm so passionate and confident
+            about achieving results for my clients that if you commit and do
+            everything within my coaching program and don't see and feel
+            noticeable results after 12 weeks I will refund you your entire
+            investment.
+            <br />
+            No questions asked, we just simply part as friends, not that I've
+            ever had to give anyone a refund before.
+            <br /> That's how sure I am that this will be the BEST
+            transformation you've ever experienced before.
+          </p>
+          <div className="text-center md:text-left mt-4">
+            <Link href="/">
+              <button
+                className="bg-transparent text-black
+             py-2 px-4  hover:bg-gray-200 border border-black"
+              >
+                CONTACT ME
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="md:w-1/2">
+          <div className="w-full md:w-2/3 mx-auto">
+            <Image
+              src="/money-back.png"
+              alt="Personal Training"
+              width={250}
+              height={250}
+            />
           </div>
         </div>
       </div>

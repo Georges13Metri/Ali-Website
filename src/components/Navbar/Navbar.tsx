@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaBars, FaTimes } from "react-icons/fa";
 
@@ -33,13 +35,17 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container h-20 flex justify-between items-center">
-        <div>
-          <img
-            src="/healthy-lifestyle-with-gym.avif"
+        <Link href="/">
+          <Image
+            width={100}
+            height={100}
+            src="/logo2.png"
             alt="Logo"
-            className="h-16 ml-5 w-auto"
+            className="cursor-pointer
+             h-16 ml-5 w-auto"
           />
-        </div>
+        </Link>
+
         <ul className="hidden md:flex space-x-4">
           {items.map((item, index) => (
             <li key={index} className="relative">
