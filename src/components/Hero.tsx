@@ -300,7 +300,8 @@ const Hero = () => {
                   I offer a comprehensive service which goes above and beyond to
                   get you in the ​best shape of your life and feeling great,
                   <br />
-                  whether you're a complete beginner, or have hit a plateau.​
+                  whether you &apos; re a complete beginner, or have hit a
+                  plateau.​
                 </span>
               </p>
 
@@ -445,16 +446,16 @@ const Hero = () => {
             PERSONAL TRAINING IN LANCING
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed text-center md:text-left">
-            At Ali Personal Training in Lancing I'm so passionate and confident
-            about achieving results for my clients that if you commit and do
-            everything within my coaching program and don't see and feel
-            noticeable results after 12 weeks I will refund you your entire
-            investment.
+            At Ali Personal Training in Lancing I &apos; m so passionate and
+            confident about achieving results for my clients that if you commit
+            and do everything within my coaching program and don &apos; t see
+            and feel noticeable results after 12 weeks I will refund you your
+            entire investment.
             <br />
-            No questions asked, we just simply part as friends, not that I've
-            ever had to give anyone a refund before.
-            <br /> That's how sure I am that this will be the BEST
-            transformation you've ever experienced before.
+            No questions asked, we just simply part as friends, not that I
+            &apos; ve ever had to give anyone a refund before.
+            <br /> That &apos; s how sure I am that this will be the BEST
+            transformation you &apos; ve ever experienced before.
           </p>
           <div className="text-center md:text-left mt-4">
             <Link href="/">
