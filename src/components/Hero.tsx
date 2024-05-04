@@ -447,7 +447,7 @@ const Hero = () => {
       <div
         className="flex flex-col md:flex-row 
       items-center justify-center md:justify-between
-       px-4 py-8 md:py-12 bg-whit border-2 border-red-700 bg-white"
+       px-4 py-8 md:py-12 bg-white"
       >
         <div className="md:w-1/2 mb-4 md:mb-0 font-serif ">
           <h2
