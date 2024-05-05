@@ -22,7 +22,7 @@ export const NavbarItems: NavbarItem[] = [
   },
   {
     label: "CONTACT",
-    href: "/",
+    href: "/contactus",
   },
   {
     label: "BLOG",

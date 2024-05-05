@@ -37,7 +37,7 @@ const Hero = () => {
                 START HERE
               </button>
             </Link>
-            <Link href="/">
+            <Link href="/contactus">
               <button className="border border-green-800 hover:bg-gray-300 text-green-800 font-semibold py-2 px-4 transition duration-300 ease-in-out ">
                 GET IN TOUCH
               </button>
