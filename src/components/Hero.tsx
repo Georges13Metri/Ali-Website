@@ -331,7 +331,7 @@ const Hero = () => {
                     need the extra accountability and guidance to reach their
                     goals.
                   </p>
-                  <Link href="/onetoonecoact">
+                  <Link href="/onetoonecoaching">
                     <button
                       className="bg-orange-700 border  border-orange-700 
                     text-white py-2 px-2 mt-2 
@@ -353,7 +353,7 @@ const Hero = () => {
                     extensive nutrition and habit coaching to ensure you stay on
                     track.
                   </p>
-                  <Link href="/">
+                  <Link href="/nutritioncoaching">
                     <button
                       className="bg-orange-700 border  border-orange-700 
                     text-white py-2 px-2 mt-2 
@@ -375,7 +375,7 @@ const Hero = () => {
                     meaningful goals, change your habits, gain willpower and
                     boost motivation.
                   </p>
-                  <Link href="/">
+                  <Link href="/mindsetcourse">
                     <button
                       className="bg-orange-700 border  border-orange-700 
                     text-white py-2 px-2 mt-2 

@@ -12,8 +12,8 @@ export const NavbarItems: NavbarItem[] = [
   {
     label: "SERVICES",
     menuItems: [
-      { label: "PERSONAL TRAINING", href: "/" },
-      { label: "MINDSET COURSES", href: "/" },
+      { label: "PERSONAL TRAINING", href: "/onetoonecoaching" },
+      { label: "MINDSET COURSES", href: "/mindsetcourse" },
     ],
   },
   {
