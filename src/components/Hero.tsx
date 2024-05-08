@@ -262,7 +262,7 @@ const Hero = () => {
             of clients at a time, so please complete the form in as much detail
             as you can and I will be in touch with you soon.
           </p>
-          <Link href="/">
+          <Link href="/newclient">
             <button
               className="mb-20 hover:bg-gray-200 text-orange-700  py-2 px-4 md:px-8 transition duration-300
                  ease-in-out hover:border hover:text-orange-700 hover:border-orange-700 border border-orange-700 text-sm md:text-base"
@@ -331,7 +331,7 @@ const Hero = () => {
                     need the extra accountability and guidance to reach their
                     goals.
                   </p>
-                  <Link href="/">
+                  <Link href="/onetoonecoact">
                     <button
                       className="bg-orange-700 border  border-orange-700 
                     text-white py-2 px-2 mt-2 

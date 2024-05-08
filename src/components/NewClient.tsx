@@ -1,13 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
 
-const ContactUs = () => {
+const NewClient = () => {
   const initialFormData = {
     firstName: "",
     lastName: "",
+    town: "",
     email: "",
     phoneNumber: "",
-    comment: "",
+    helpDescription: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -17,8 +20,8 @@ const ContactUs = () => {
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
     }));
   };
@@ -30,7 +33,7 @@ const ContactUs = () => {
     console.log("Form submission:", formData);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/newclient", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +43,7 @@ const ContactUs = () => {
       setFormData(initialFormData);
 
       if (!response.ok) {
-        throw new Error("Failed to submit form");
+        throw new Error("Failed to apply form");
       }
 
       setSuccess(true);
@@ -51,7 +54,7 @@ const ContactUs = () => {
           "Network error occurred. Please check your internet connection."
         );
       } else {
-        setError("Failed to submit form. Please try again later.");
+        setError("Failed to apply form. Please try again later.");
       }
     } finally {
       setLoading(false);
@@ -61,47 +64,44 @@ const ContactUs = () => {
   return (
     <div
       className="w-full bg-white p-8 flex items-center
-     flex-col text-black"
+    flex-col text-black"
     >
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">CONTACT ME</h1>
-        <p className="text-gray-600 mt-2">
-          Whatever your question or query, please feel free to get in touch and
-          I will get back to you promptly.
-        </p>
-        <hr className="my-6 border-t-2 border-gray-200" />
+      <div className=" w-full text-center">
+        <h1 className="text-4xl font-bold">NEW CLIENT SPECIAL</h1>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="lg:order-last">
-          <h2 className="text-lg font-semibold mb-2">TELEPHONE</h2>
-          <p>07743346007</p>
+      <hr className="my-6 border-t-2  w-1/2 border-gray-300" />
+      <div
+        className="abs grid bg-white grid-cols-1 md:grid-cols-2 
+      lg:grid-cols-2 gap-8 p-10 md:p-10 items-center"
+      >
+        <div className="flex justify-center">
+          <Image
+            width={200}
+            height={100}
+            src="/clientfree.png"
+            alt="freeclient"
+          />
         </div>
-        <div className="lg:order-first">
-          <h2 className="text-lg font-semibold mb-2">EMAIL</h2>
-          <p>mark@markpersonaltraining.com</p>
-        </div>
-        <div className="lg:order-last">
-          <h2 className="text-lg font-semibold mb-2">ADDRESS</h2>
-          <p>
-            82 Manor Road,
-            <br />
-            Lancing,
-            <br />
-            West Sussex BN15 0HD
-            <br />
-            United Kingdom
-          </p>
-        </div>
-        <div className="lg:order-first">
-          <h2 className="text-lg font-semibold mb-2">TRAINING HOURS</h2>
-          <p>
-            Monday - Friday: 8:00 - 21:00
-            <br />
-            Saturday - Sunday: 8:00 - 14:00
+        <div
+          className="flex flex-col
+         justify-center mt-5 text-black"
+        >
+          <h1 className="text-lg md:text-3xl font-bold mb-4 font-serif">
+            A FREE TRANSFORMATION CONSULTATION (£50.00 VALUE)
+          </h1>
+          <p className="text-sm md:text-base font-serif mb-6 md:mb-8 ">
+            Take the first step to success by applying for a FREE Transformation
+            Consultation. We will talk about your needs, your goals, lifestyle
+            habits, your diet, and establish if we are a good fit to work
+            together. I will give you actionable advice on how you can
+            successfully progress and achieve more than you thought possible.
+            There are limited slots available as I only work with a small number
+            of clients at a time, so please complete the form in as much detail
+            as you can and I will be in touch with you soon.
           </p>
         </div>
       </div>
-      <hr className="my-6 border-t-2 border-gray-200" />
+      <hr className="my-6 border-t-2  w-1/2 border-gray-300" />
       <div className="lg:w-1/2 lg:mx-auto">
         <h2 className="text-lg font-semibold mb-2">CONTACT ME</h2>
         <form onSubmit={handleSubmit}>
@@ -171,14 +171,30 @@ const ContactUs = () => {
                 required
               />
             </div>
+            <div>
+              <label htmlFor="town" className="block mb-1">
+                Town
+              </label>
+              <input
+                type="text"
+                id="town"
+                name="town"
+                value={formData.town}
+                onChange={handleChange}
+                className="w-full border border-gray-300 rounded-lg px-4 py-2"
+                placeholder="Enter your Town"
+                required
+              />
+            </div>
             <div className="col-span-2">
-              <label htmlFor="comment" className="block mb-1">
-                Comment
+              <label htmlFor="helpDescription" className="block mb-1">
+                PLEASE TELL ME WHAT YOU NEED HELP WITH EXACTLY <br />
+                (BE AS DETAILED AS POSSIBLE):
               </label>
               <textarea
-                name="comment"
-                id="comment"
-                value={formData.comment}
+                name="helpDescription"
+                id="helpDescription"
+                value={formData.helpDescription}
                 onChange={handleChange}
                 className="w-full border border-gray-300 
                 rounded-lg px-4 py-2"
@@ -193,7 +209,7 @@ const ContactUs = () => {
                  hover:bg-gray-300 border border-black py-2"
                 disabled={loading}
               >
-                {loading ? "Submitting..." : "Submit"}
+                {loading ? "Submitting..." : "APPLY"}
               </button>
             </div>
           </div>
@@ -205,4 +221,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default NewClient;
