@@ -1,5 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
+import * as Yup from "yup";
+import { FaSpinner } from "react-icons/fa";
 
 const ContactUs = () => {
   const initialFormData = {
@@ -23,6 +26,21 @@ const ContactUs = () => {
     }));
   };
 
+  const schema = Yup.object().shape({
+    firstName: Yup.string().required("First Name is required"),
+    lastName: Yup.string().required("Last Name is required"),
+    email: Yup.string()
+      .email("Invalid email")
+      .test("is-gmail", "Only Gmail addresses are allowed", (value) =>
+        value ? value.endsWith("@gmail.com") : false
+      )
+      .required("Email is required"),
+    phoneNumber: Yup.string()
+      .matches(/^\d{8}$/, "Invalid phone number")
+      .required("Phone Number is required"),
+    comment: Yup.string().required("Comment is required"),
+  });
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
@@ -30,18 +48,33 @@ const ContactUs = () => {
     console.log("Form submission:", formData);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      // Validate form data
+      await schema.validate(formData, { abortEarly: false });
+
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_hzoxbgd",
+        "template_pk580mo",
+        {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          message: `${formData.comment}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}`,
         },
-        body: JSON.stringify(formData),
-      });
+        "HRxkfw62Pr66w8EJV"
+      );
+
+      // Send form data to your server
+      // const response = await fetch("/api/contact", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
       setFormData(initialFormData);
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
-      }
+      // if (!response.ok) {
+      //   throw new Error("Failed to submit form. Please try again later.");
+      // }
 
       setSuccess(true);
     } catch (error: any) {
@@ -51,12 +84,24 @@ const ContactUs = () => {
           "Network error occurred. Please check your internet connection."
         );
       } else {
-        setError("Failed to submit form. Please try again later.");
+        setError(
+          error.message || "Failed to submit form. Please try again later."
+        );
       }
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (success) {
+      timer = setTimeout(() => {
+        setSuccess(false);
+      }, 5000); // 5 seconds
+    }
+    return () => clearTimeout(timer);
+  }, [success]);
 
   return (
     <div
@@ -193,14 +238,38 @@ const ContactUs = () => {
                  hover:bg-gray-300 border border-black py-2"
                 disabled={loading}
               >
-                {loading ? "Submitting..." : "Submit"}
+                {loading ? (
+                  <FaSpinner className="animate-spin flex mx-auto" />
+                ) : (
+                  "Submit"
+                )}
+                {/* {loading ? "Submitting..." : "Submit"} */}
               </button>
             </div>
           </div>
         </form>
       </div>
-      {success && <p className="text-black">Form submitted successfully!</p>}
-      {error && <p className="text-red-500">{error}</p>}
+      {success && (
+        <div
+          className="bg-green-100 border border-green-400 text-green-700 
+          px-4 py-3 rounded relative mt-5"
+          role="alert"
+        >
+          <p>
+            Your message has been sent successfully! I will get back to you
+            soon.
+          </p>
+        </div>
+      )}
+      {error && (
+        <div
+          className="bg-red-100 border border-red-400 text-red-700 px-4 py-3
+           rounded relative mt-5"
+          role="alert"
+        >
+          <p>{error}</p>
+        </div>
+      )}
     </div>
   );
 };
