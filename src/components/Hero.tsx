@@ -469,7 +469,7 @@ const Hero = () => {
             transformation you &apos; ve ever experienced before.
           </p>
           <div className="text-center md:text-left mt-4">
-            <Link href="/">
+            <Link href="/contactus">
               <button
                 className="bg-transparent text-black
              py-2 px-4  hover:bg-gray-200 border border-black"
