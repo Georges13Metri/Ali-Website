@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import * as Yup from "yup";
 import { FaSpinner } from "react-icons/fa";
+// import twilio from 'twilio';
 
 const ContactUs = () => {
   const initialFormData = {
@@ -48,6 +49,18 @@ const ContactUs = () => {
     console.log("Form submission:", formData);
 
     try {
+      // Send WhatsApp message using Twilio
+      // const client = twilio(
+      //   'YOUR_TWILIO_ACCOUNT_SID',
+      //   'YOUR_TWILIO_AUTH_TOKEN'
+      // );
+
+      // await client.messages.create({
+      //   from: 'whatsapp:+<YOUR_TWILIO_PHONE_NUMBER>',
+      //   to: 'whatsapp:<RECIPIENT_PHONE_NUMBER>',
+      //   body: `New contact form submission:\n\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}\nComment: ${formData.comment}`,
+      // });
+
       // Validate form data
       await schema.validate(formData, { abortEarly: false });
 

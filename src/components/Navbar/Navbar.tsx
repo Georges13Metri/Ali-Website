@@ -87,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
             </li>
           ))}
         </ul>
-        <div className="md:hidden lg:hidden text-black mx-auto">
+        <div className="md:hidden lg:hidden text-black p-5">
           <button onClick={toggleMenu}>
             {open ? (
               <FaTimes className="text-black" />
@@ -99,13 +99,10 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
       </div>
       {open && (
         <div className="md:hidden">
-          <ul
-            className="flex flex-col ml-auto items-center
-            mx-auto h-screen justify-center space-y-4"
-          >
+          <ul className="flex flex-col h-screen justify-center space-y-4">
             {items.map((item, index) => (
               <li key={index}>
-                <div className="flex items-center">
+                <div className="flex justify-center items-center">
                   <a
                     href={item.href}
                     className="text-black hover:text-gray-600"
@@ -127,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
                   )}
                 </div>
                 {item.menuItems && activeIndex === index && (
-                  <ul className=" bg-gray-200 mt-1  ">
+                  <ul className=" bg-gray-200 mt-1 text-center ">
                     {item.menuItems.map((subItem, subIndex) => (
                       <li key={subIndex}>
                         <a
