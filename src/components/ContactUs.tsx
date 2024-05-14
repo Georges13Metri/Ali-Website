@@ -57,6 +57,7 @@ const ContactUs = () => {
         "template_pk580mo",
         {
           from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
           message: `${formData.comment}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}`,
         },
         "HRxkfw62Pr66w8EJV"
